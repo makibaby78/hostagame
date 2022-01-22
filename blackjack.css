@@ -111,6 +111,7 @@ button.btn:active{
     animation-duration: 0.3s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+    background-color: rgb(0 0 0 / 40%);
 }
 .appearAnimate-overlay-out{
     animation-name: overlay-text-animate-out;
@@ -307,6 +308,7 @@ button#sendBet {
     color: #fff;
     font-weight: 600;
     outline: none;
+    transition-duration: 0.2s;
 }
 button#sendBet:active, .btn:active{
     transform: scale(0.9);
