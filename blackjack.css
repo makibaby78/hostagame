@@ -231,17 +231,7 @@ h4 {
     background-color: #13978a;
     border-radius: 33px;
     margin-top: 150px;
-    height: 150px;
-    max-height: 100%;
 }
-/*
-.bet-box, .bet-box h2, .bet-box input, .bet-box h4, .bet-box button{
-    animation-name: bet-box-animate;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-}*/
-
 .appearAnimate{
     animation-name: bet-box-animate;
     animation-duration: 0.3s;
@@ -549,5 +539,6 @@ button#sendBet:hover{
 @media only screen and (max-width: 600px) {
   .bet-box {
     margin: 10px;
+    height: 200px !important;
   }
 }
