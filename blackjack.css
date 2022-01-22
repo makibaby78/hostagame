@@ -1,0 +1,546 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #555;
+}
+.score-box {
+    border: 2px solid #263b45;
+    width: 160px;
+    height: 30px;
+    background-color: #cdc9c9;
+    line-height: 1.7;
+    padding: 5px;
+}
+.score-board {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.board {
+    border: 10px solid #333;
+    border-radius: 10px;
+    margin: 20px;
+    background-color: #a52a2a;
+}
+.stat{
+    padding: 0;
+    text-align: center;
+    margin: 10px;
+}
+.board-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    padding-bottom: 0px;
+    padding-top: 0;
+}
+.players {
+    position: relative;
+    border: 2px solid #000;
+    height: 250px;
+    margin: 10px;
+    background-color: #12696a;
+}
+.playing {
+    border-radius: 200px 200px 0px 0px;
+}
+.enemy {
+    border-radius: 0px 0px 200px 200px;
+}
+.players h1{
+    text-align: center;
+    color: rgb(224, 224, 224);
+    font-size: 20px;
+    padding: 2px;
+    margin: 0;
+}
+.players h2{
+    text-align: center;
+    font-size: 15px;
+    margin: 0;
+}
+button.btn {
+    font-size: 25px;
+    font-weight: bold;
+    color: #7e7676;
+    background-color: #fff;
+    padding: 15px;
+    margin: 15px 10px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    line-height: 0.7;
+    border: 5px solid #7e7676;
+}
+button.btn:hover{
+    transform: scale(1.2);
+    color: #fff;
+    background-color: #7e7676;
+}
+button.btn:active{
+    transform: scale(0.8);
+}
+.btn-decisions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-container-player, .card-container-enemy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 60%;
+    padding: 0 20px;
+}
+.overlay-text{
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+    width: 100%;
+    height: 100%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	z-index: 200;
+}
+.appearAnimate-overlay{
+    animation-name: overlay-text-animate;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+.appearAnimate-overlay-out{
+    animation-name: overlay-text-animate-out;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes overlay-text-animate{
+    0%{
+        height: 90%;
+    }
+    100%{
+        height: 100%;
+    }  
+}
+@keyframes overlay-text-animate-out{
+    0%{
+        height: 100%;
+    }
+    100%{
+        height: 0%;
+    }  
+}
+h4 {
+    margin: 0;
+    padding-top: 10px;
+    color: #ff0000;
+}
+.overlay-text2, .overlay-text3{
+	display: grid;
+	grid-gap: 2px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	z-index: 200;
+	color: white;
+	font-family: pixelated;
+	animation: overlay-grow 500ms forwards;
+}
+.overlay-text4{
+    display: grid;
+	grid-gap: 2px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	z-index: 100;
+	color: white;
+	font-family: pixelated;
+	animation: overlay-grow 500ms forwards;
+}
+.board-inside{
+    border: 10px solid #966f33;
+    margin: 5px;
+    border-radius: 15px;
+    background-image: url(complete-card-deck/carpet-background.jpeg);
+}
+@keyframes overlay-grow{
+	from{
+		background-color: rgba(0, 0, 0, 0);
+		font-size: 0;
+	}
+	to{
+		background-color: rgba(0, 0, 0, .8);
+		font-size: 3em;
+	}
+}
+.sample{
+    position: absolute;
+    background-image: url(complete-card-deck/gray_back.png);
+    top: 6%;
+    left: 6%;
+    width: 70px;
+    height: 130px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 0 10px;
+    border: none;
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    z-index: 300;
+
+}
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+        opacity:0.2;
+    }
+    50%{
+        transform: rotate(180deg);
+        opacity: 0.5;
+    }
+    100%{
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+    
+}
+.bet-box {
+    display: flex;
+    border: none;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #13978a;
+    border-radius: 33px;
+    margin-top: 150px;
+    height: 150px;
+    max-height: 100%;
+}
+/*
+.bet-box, .bet-box h2, .bet-box input, .bet-box h4, .bet-box button{
+    animation-name: bet-box-animate;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}*/
+
+.appearAnimate{
+    animation-name: bet-box-animate;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+.disappearAnimate{
+    animation-name: bet-box-animate-out;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bet-box-animate{
+    0%{
+        height: 0px;
+        font-size: 0;
+        padding: 0;
+    }
+    100%{
+        height: 150px;
+        font-size: auto;
+        padding: auto;
+    }  
+}
+@keyframes bet-box-animate-out{
+    0%{
+        height: 150px;
+        font-size: auto;
+        padding: auto;
+    }
+    100%{
+        height: 0;
+        font-size: 0;
+        padding: 0;
+    }  
+}
+
+.overlay-text h2{
+    color: #fff;
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+}
+.hide-element{
+    display: none;
+}
+input#inputBet {
+    height: 25px;
+    font-size: 25px;
+    max-width: 150px;
+    margin: 10px;
+    padding: 4px;
+    border: none;
+    outline: none;
+}
+button#sendBet {
+    padding: 8px 35px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #6faa6f;
+    color: #fff;
+    font-weight: 600;
+    outline: none;
+}
+button#sendBet:active, .btn:active{
+    transform: scale(0.9);
+}
+button#sendBet:hover{
+    background-color: #fff;
+    color: #6faa6f;
+}
+.settings-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    line-height: 0.9;
+    z-index:300;
+}
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    line-height: 0.9;
+}
+.close-btn:hover, .settings-btn:hover{
+    background-color: rgb(20, 77, 161);
+    color: #fff;
+}
+.flex-score-box{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.option-box {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #363131;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 500px;
+    margin: auto;
+    max-height: 500px;
+    z-index: 300;
+    background-color: #607d8b;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: scroll;
+}
+.option-box h3, .option-box p{
+    color: #fff;
+}
+
+/*CARD DECK*/
+/*heart*/
+.aceh{
+    background-image: url(complete-card-deck/AH.png);
+}
+.twoh{
+    background-image: url(complete-card-deck/2H.png);
+}
+.threeh{
+    background-image: url(complete-card-deck/3H.png);
+}
+.fourh{
+    background-image: url(complete-card-deck/4H.png);
+}
+.fiveh{
+    background-image: url(complete-card-deck/5H.png);
+}
+.sixh{
+    background-image: url(complete-card-deck/6H.png);
+}
+.sevenh{
+    background-image: url(complete-card-deck/7H.png);
+}
+.eighthh{
+    background-image: url(complete-card-deck/8H.png);
+}
+.nineh{
+    background-image: url(complete-card-deck/9H.png);
+}
+.tenh{
+    background-image: url(complete-card-deck/10H.png);
+}
+.jackh{
+    background-image: url(complete-card-deck/JH.png);
+}
+.queenh{
+    background-image: url(complete-card-deck/QH.png);
+}
+.kingh{
+    background-image: url(complete-card-deck/KH.png);
+}
+/*spade*/
+.aces{
+    background-image: url(complete-card-deck/AS.png);
+}
+.twos{
+    background-image: url(complete-card-deck/2S.png);
+}
+.threes{
+    background-image: url(complete-card-deck/3S.png);
+}
+.fours{
+    background-image: url(complete-card-deck/4S.png);
+}
+.fives{
+    background-image: url(complete-card-deck/5S.png);
+}
+.sixs{
+    background-image: url(complete-card-deck/6S.png);
+}
+.sevens{
+    background-image: url(complete-card-deck/7S.png);
+}
+.eighths{
+    background-image: url(complete-card-deck/8S.png);
+}
+.nines{
+    background-image: url(complete-card-deck/9S.png);
+}
+.tens{
+    background-image: url(complete-card-deck/10S.png);
+}
+.jacks{
+    background-image: url(complete-card-deck/JS.png);
+}
+.queens{
+    background-image: url(complete-card-deck/QS.png);
+}
+.kings{
+    background-image: url(complete-card-deck/KS.png);
+}
+/*diamond*/
+.aced{
+    background-image: url(complete-card-deck/AD.png);
+}
+.twod{
+    background-image: url(complete-card-deck/2D.png);
+}
+.threed{
+    background-image: url(complete-card-deck/3D.png);
+}
+.fourd{
+    background-image: url(complete-card-deck/4D.png);
+}
+.fived{
+    background-image: url(complete-card-deck/5D.png);
+}
+.sixd{
+    background-image: url(complete-card-deck/6D.png);
+}
+.sevend{
+    background-image: url(complete-card-deck/7D.png);
+}
+.eighthd{
+    background-image: url(complete-card-deck/8D.png);
+}
+.nined{
+    background-image: url(complete-card-deck/9D.png);
+}
+.tend{
+    background-image: url(complete-card-deck/10D.png);
+}
+.jackd{
+    background-image: url(complete-card-deck/JD.png);
+}
+.queend{
+    background-image: url(complete-card-deck/QD.png);
+}
+.kingd{
+    background-image: url(complete-card-deck/KD.png);
+}
+/*clover*/
+.acec{
+    background-image: url(complete-card-deck/AC.png);
+}
+.twoc{
+    background-image: url(complete-card-deck/2C.png);
+}
+.threec{
+    background-image: url(complete-card-deck/3C.png);
+}
+.fourc{
+    background-image: url(complete-card-deck/4C.png);
+}
+.fivec{
+    background-image: url(complete-card-deck/5C.png);
+}
+.sixc{
+    background-image: url(complete-card-deck/6C.png);
+}
+.sevenc{
+    background-image: url(complete-card-deck/7C.png);
+}
+.eighthc{
+    background-image: url(complete-card-deck/8C.png);
+}
+.ninec{
+    background-image: url(complete-card-deck/9C.png);
+}
+.tenc{
+    background-image: url(complete-card-deck/10C.png);
+}
+.jackc{
+    background-image: url(complete-card-deck/JC.png);
+}
+.queenc{
+    background-image: url(complete-card-deck/QC.png);
+}
+.kingc{
+    background-image: url(complete-card-deck/KC.png);
+}
+.back-card{
+    background-image: url(complete-card-deck/gray_back.png);
+}
+.card{
+    width: 70px;
+    height: 120px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 0 10px;
+    border: none;
+}
