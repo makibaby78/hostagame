@@ -111,7 +111,6 @@ button.btn:active{
     animation-duration: 0.3s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
-    background-color: rgb(0 0 0 / 40%);
 }
 .appearAnimate-overlay-out{
     animation-name: overlay-text-animate-out;
@@ -231,7 +230,18 @@ h4 {
     background-color: #13978a;
     border-radius: 33px;
     margin-top: 150px;
+    height: 150px;
+    max-height: 100%;
+    margin:10px;
 }
+/*
+.bet-box, .bet-box h2, .bet-box input, .bet-box h4, .bet-box button{
+    animation-name: bet-box-animate;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}*/
+
 .appearAnimate{
     animation-name: bet-box-animate;
     animation-duration: 0.3s;
@@ -298,7 +308,6 @@ button#sendBet {
     color: #fff;
     font-weight: 600;
     outline: none;
-    transition-duration: 0.2s;
 }
 button#sendBet:active, .btn:active{
     transform: scale(0.9);
@@ -539,6 +548,19 @@ button#sendBet:hover{
 @media only screen and (max-width: 600px) {
   .bet-box {
     margin: 10px;
-    height: 200px !important;
+    height: 150px !important;
   }
+  .overlay-text h2 {
+    font-size: 20px;
+  }
+  button#sendBet {
+    padding: 0px 25px;
+    font-size: 15px;
+  }
+  input#inputBet {
+    height: 15px;
+    font-size: 20px;
+    max-width: 100px;
+ }
 }
+
