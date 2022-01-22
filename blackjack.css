@@ -566,5 +566,8 @@ button#sendBet:hover{
     width: 20px;
     height: 55px;
  }
+ .overlay-text4 h1{
+    font-size: 45px;
+ }
 }
 
