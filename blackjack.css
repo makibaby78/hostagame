@@ -572,10 +572,14 @@ button#sendBet:hover{
  }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 600px) and (orientation: landscape){
     .board {
         border: 2px solid #333;
         margin: 10px 2px;
+    }
+    .card {
+        width: 20px;
+        height: 55px;
     }
     h1 {
         font-size: 15px !important;
@@ -624,4 +628,3 @@ button#sendBet:hover{
         max-width: 50px;
     }
 }
-
