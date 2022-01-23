@@ -572,7 +572,7 @@ button#sendBet:hover{
  }
 }
 
-@media (orientation: landscape) and (max-width:500px) {
+@media (orientation: landscape) and (max-width:600px) {
     .board {
         border: 2px solid #333;
         margin: 10px 2px;
